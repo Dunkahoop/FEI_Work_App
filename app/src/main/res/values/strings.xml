@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FEI Work App</string>
+    <string name="businessDays">5 business days from today: </string>
+    <string name="AM">AM</string>
+    <string name="PM">PM</string>
+    <string name="enter_time">Enter time</string>
+    <string name="end_time">End Time</string>
+    <string name="start_time">Start Time</string>
+    <string name="calculate">Calculate</string>
+</resources>
