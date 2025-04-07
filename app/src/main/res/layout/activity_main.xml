@@ -57,6 +57,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:autofillHints="930"
                 android:hint="@string/enter_time"
                 android:inputType="number"
                 android:maxLength="4" />
@@ -103,6 +104,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:autofillHints="500"
                 android:hint="@string/enter_time"
                 android:inputType="number"
                 android:maxLength="4" />
@@ -137,14 +139,18 @@
             android:layout_marginTop="24dp"
             android:text="@string/calculate" />
 
-        <!--PLACEHOLDER, need to replace text soon-->
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hours_worked"
             android:textAlignment="center"
-            android:text="Hours worked:\n8.5"
-            android:padding="40dp"/>
+            android:visibility="invisible" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center" />
 
     </LinearLayout>
 

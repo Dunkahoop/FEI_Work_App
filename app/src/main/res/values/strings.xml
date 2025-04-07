@@ -7,4 +7,7 @@
     <string name="end_time">End Time</string>
     <string name="start_time">Start Time</string>
     <string name="calculate">Calculate</string>
+    <string name="err_too_short">Error: time(s) must be longer than 3 numbers</string>
+    <string name="err_invalid_time">Error: Hour of time(s) must be between 1 and 12</string>
+    <string name="hours_worked">Hours worked:</string>
 </resources>
