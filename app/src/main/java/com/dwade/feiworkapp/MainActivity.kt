@@ -55,6 +55,8 @@ class MainActivity : AppCompatActivity() {
 
         val calcButton = findViewById<Button>(R.id.calculateButton)
         calcButton.setOnClickListener {
+            hoursTitle.visibility = View.INVISIBLE
+
             val start = startTime.text
             val end = endTime.text
             val startLength = start.length
@@ -62,7 +64,7 @@ class MainActivity : AppCompatActivity() {
 
             //error if time too short
             if (startLength < 3 || endLength < 3) {
-                textView.text = R.string.err_too_short.toString()
+                textView.setText(R.string.err_too_short)
                 return@setOnClickListener
             }
 
@@ -84,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
             //format check, hour must be between 1 and 12
             if (startHour > 12 || startHour < 0 || endHour > 12 || endHour < 0) {
-                textView.text = R.string.err_invalid_time.toString()
+                textView.setText(R.string.err_invalid_time)
                 return@setOnClickListener
             }
 
@@ -106,12 +108,18 @@ class MainActivity : AppCompatActivity() {
             val finalStartTime: Double = startHour + (startMinute / 60)// /60 for getting decimal minutes
             var finalEndTime: Double = endHour + (endMinute / 60)
 
+            //account for working past midnight
             if (finalStartTime >= finalEndTime) finalEndTime += 24
 
             val finalTime = finalEndTime - finalStartTime
             hoursTitle.visibility = View.VISIBLE
             textView.text = finalTime.toString()
         }
-    }
 
+        val clearButton = findViewById<Button>(R.id.clearButton)
+        clearButton.setOnClickListener {
+            startTime.setText("")
+            endTime.setText("")
+        }
+    }
 }
