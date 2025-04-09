@@ -120,6 +120,8 @@ class MainActivity : AppCompatActivity() {
         clearButton.setOnClickListener {
             startTime.setText("")
             endTime.setText("")
+            textView.text = ""
+            hoursTitle.visibility = View.INVISIBLE
         }
     }
 }
